@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E814F20C-4F9E-40C9-82DC-B4B0D434F290}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hi_Tech_Order_Management_System</RootNamespace>
+    <AssemblyName>Hi-Tech Order Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\Books.cs" />
+    <Compile Include="BLL\Customer.cs" />
+    <Compile Include="BLL\Employee.cs" />
+    <Compile Include="BLL\Orders.cs" />
+    <Compile Include="BLL\User.cs" />
+    <Compile Include="DAL\BooksDB.cs" />
+    <Compile Include="DAL\CustomerDB.cs" />
+    <Compile Include="DAL\EmployeeDB.cs" />
+    <Compile Include="DAL\OrdersDB.cs" />
+    <Compile Include="DAL\UserDB.cs" />
+    <Compile Include="DAL\UtilityDB.cs" />
+    <Compile Include="GUI\Book.cs">
+      <DependentUpon>datamodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Inventory_Controller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Inventory_Controller.Designer.cs">
+      <DependentUpon>Inventory_Controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Sales_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Sales_Manager.Designer.cs">
+      <DependentUpon>Sales_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\datamodel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datamodel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\datamodel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datamodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\datamodel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datamodel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MIS_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\.Designer.cs">
+      <DependentUpon>MIS_Manager.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Order.cs">
+      <DependentUpon>datamodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OrderLine.cs">
+      <DependentUpon>datamodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Order_Clerks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Order_Clerks.Designer.cs">
+      <DependentUpon>Order_Clerks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserSecurityFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserSecurityFrom.Designer.cs">
+      <DependentUpon>UserSecurityFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\Validation.cs" />
+    <EmbeddedResource Include="GUI\Inventory_Controller.resx">
+      <DependentUpon>Inventory_Controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Sales_Manager.resx">
+      <DependentUpon>Sales_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MIS_Manager.resx">
+      <DependentUpon>MIS_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Order_Clerks.resx">
+      <DependentUpon>Order_Clerks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserSecurityFrom.resx">
+      <DependentUpon>UserSecurityFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="GUI\datamodel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>datamodel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="GUI\datamodel.edmx.diagram">
+      <DependentUpon>datamodel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GUI\datamodel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>datamodel.edmx</DependentUpon>
+      <LastGenOutput>datamodel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="GUI\datamodel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>datamodel.edmx</DependentUpon>
+      <LastGenOutput>datamodel.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\istockphoto-1140640229-170667a.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
